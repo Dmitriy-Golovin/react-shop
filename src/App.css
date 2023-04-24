@@ -1,38 +1,80 @@
+:root {
+--main-padding: calc((100% - 1600px) / 2);
+}
+
+html, body, #root, .App {
+    min-height: 100vh;
+}
+
+header, footer {
+    height: 70px;
+    padding: 0 var(--main-padding);
+    background: teal;
+    display: flex;
+    align-items: center;
+}
+
 .App {
-  text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a {
+    text-decoration: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+header .logo {
+    font-size: 32px;
+    color: #FFF;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.logo:hover {
+    color: #BDBDBD;
 }
 
-.App-link {
-  color: #61dafb;
+footer .logo {
+    font-size: 18px;
+    color: #FFF;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.logo {
+    transition: .4s;
+}
+
+.main {
+    flex: 1 0 auto;
+    padding: 0 var(--main-padding);
+}
+
+.loader_container {
+    flex: 1 0 auto;
+    background: rgb(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader {
+    height: 70px;
+    width: 70px;
+    box-sizing: border-box;
+    border: 10px dotted #FFF;
+    border-radius: 50%;
+    animation: rotate_loader 2s infinite linear;
+}
+
+@keyframes rotate_loader {
+	from {
+		transform: rotate(0deg);
+	}
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@media (max-width: 1620px) {
+    :root {
+        --main-padding: 10px;
+    }
 }

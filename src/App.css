@@ -43,7 +43,7 @@ footer .logo {
 
 .main {
     flex: 1 0 auto;
-    padding: 0 var(--main-padding);
+    padding: 30px var(--main-padding);
 }
 
 .loader_container {
@@ -61,6 +61,78 @@ footer .logo {
     border: 10px dotted #FFF;
     border-radius: 50%;
     animation: rotate_loader 2s infinite linear;
+}
+
+.product_list_container {
+    display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+	gap: 30px;
+}
+
+.product_item {
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 5px 1px rgb(0 0 0 / 50%);
+    cursor: pointer;
+}
+
+.product_item .img_box {
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.product_item_popup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    font-size: 24px;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: .4s;
+    color: #FFF;
+    background: rgb(0, 0, 0, 0.7);
+}
+
+.product_item:hover .product_item_popup {
+    opacity: 1;
+}
+
+.img_box img {
+    width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.product_item .title {
+    margin: 15px 10px;
+    font-size: 18px;
+}
+
+.product_item .price {
+    margin: 15px 10px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.product_item .description {
+    margin: 15px 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    font-weight: 400;
+    overflow: hidden;
+}
+
+.no_items {
+    font-style: italic;
+    
 }
 
 @keyframes rotate_loader {

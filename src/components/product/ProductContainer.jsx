@@ -5,7 +5,7 @@ import ProductItem from './ProductItem';
 const ProductContainer = () => {
 
     const context = React.useContext(AppContext);
-
+    // context.productList = [];
     return (
         context.productList.length > 0
             ? <div className='product_list_container'>
